@@ -1,3 +1,4 @@
+from os import truncate
 from typing_extensions import ParamSpecKwargs
 from clase_empleado import empleado
 from clase_curso import curso
@@ -78,11 +79,76 @@ while menuprincipal != 0:
             elif opciones_menu_tema >= 4:
                 menu_administrar_tema = False
     elif menuprincipal == 4:
-        pass
+        menu_administrar_video = True
+        while menu_administrar_video == True:
+            opciones_menu_video = (input("Menu de administracion de video: \n 1-Crear nuevo video \n 2- Consultar todos los video \n 3- Consultar a detalle \n"))
+            if opciones_menu_video == 1:
+                vid = int(input("Ingrese un id al video"))
+                vnom = input("ingrese un nombre al video")
+                vurl = input("ingrese una url")
+                vfecha = input("mencione la fecha de publicacion")
+                video1 = video(vid, vnom, vurl, vfecha)
+                video1.guardar()
+                print("se ha guardado el video")
+            elif opciones_menu_video == 2:
+                print("videos: ")
+                video1 = video()
+                video1.consultar_todo()
+            elif opciones_menu_video == 3:
+                id_vid = input("ingrese id de video a buscar: ")
+                video1 = video()
+                video1.consultar_por_id(id_vid)
+            elif opciones_menu_video == 0:
+                menu_administrar_video = False
+            elif opciones_menu_video >= 4:
+                menu_administrar_video = False
     elif menuprincipal == 5:
-        pass
+        menu_administrar_temasasigna = True
+        while menu_administrar_temasasigna == True:
+            opciones_menu_temasasigna = (input("Menu de administracion de temas asignados: \n 1-Crear nuevo tema asignado\n 2- Consultar todos los temas asignados \n 3- Consultar a detalle \n"))
+            if opciones_menu_temasasigna == 1:
+                ctid = int(input("ingrese id de tema"))
+                cuid = int(input("ingrese id de curso"))
+                temid = int(input("ingrese aid de tema"))
+                cu_te = curso_tema(ctid, cuid, temid)
+                cu_te.guardar()
+                print("se ha guardado el tema")
+            elif opciones_menu_temasasigna == 2:
+                print("temas asignados: ")
+                cu_te = curso_tema()
+                cu_te.consultar_todo()
+            
+            elif opciones_menu_temasasigna == 3:
+                id_cu_te = input("ingrese id de curso asignado: ")
+                cu_te = curso_tema()
+                cu_te.consultar_por_id(id_cu_te)
+            elif opciones_menu_temasasigna == 0:
+                menu_administrar_temasasigna = False
+            elif opciones_menu_temasasigna >= 4:
+                menu_administrar_temasasigna = False
     elif menuprincipal == 6:
-        pass
+        menu_administrar_temavideo = True
+        while menu_administrar_temavideo == True:
+            opciones_menu_temavideo = (input("Menu de administracion de temavideo: \n 1-Crear nuevo temavideo \n 2- Consultar todos los temavideo \n 3- Consultar a detalle \n"))
+            if opciones_menu_temavideo == 1:
+                ctvid = int(input("ingrese id de temavideo"))
+                cuteid = int(input("ingrese id de curso"))
+                viide = int(input("Ingrese id de video"))
+                cu_te_vi = curso_tema_video()
+                cu_te_vi.guardar()
+                print("se guardo el cursotemavideo")
+            elif opciones_menu_temavideo == 2:
+                print("curso temavideo")
+                cu_te_vi = curso_tema_video()
+                cu_te_vi.consultar_todo()
+            elif opciones_menu_temavideo == 3:
+                id_cu_te_vi = input("ingrese el id")
+                cu_te_vi = curso_tema_video()
+                cu_te_vi.consultar_por_id(id_cu_te_vi)
+            elif opciones_menu_temavideo == 0:
+                menu_administrar_temavideo = False
+            elif opciones_menu_temavideo >= 4:
+                menu_administrar_temavideos = False
     else:
         print("Opcion no valida")
     menuprincipal = int(input("Menu principal: \n 1- agregar empleados \n 2.- Administrar cursos \n 3- Administrar temas \n 4- Administrar videos \n 5-Administrar los temas asignados al curso \n 6- Administrar los videos asignados a los temas del curso \n"))
