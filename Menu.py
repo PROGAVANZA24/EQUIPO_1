@@ -23,15 +23,15 @@ while menuprincipal != 0:
     else:
         print("Opcion no valida")
     menuprincipal = int(input("Menu principal: \n 1- agregar empleados \n 2.- Administrar cursos \n 3- Administrar temas \n 4- Administrar videos \n 5-Administrar los temas asignados al curso \n 6- Administrar los videos asignados a los temas del curso \n"))
-    while menu_administrar_empleados == True:
-        opciones_menu_empleados = int(input("Menu de administracion de empleados: \n 1-Crear nuevo empleado \n 2- Consultar todos los empleados \n 3- Consultar a detalle \n"))
-        if opciones_menu_empleados == 1:
-            print("creando")
-        elif opciones_menu_empleados == 2:
-            print("creando")
-        elif opciones_menu_empleados == 3:
-            print("creando")
-        elif opciones_menu_empleados == 0:
-            menu_administrar_empleados = False
-        elif opciones_menu_empleados >= 4:
-            menu_administrar_empleados = False
+while menu_administrar_empleados == True:
+    opciones_menu_empleados = int(input("Menu de administracion de empleados: \n 1-Crear nuevo empleado \n 2- Consultar todos los empleados \n 3- Consultar a detalle \n"))
+    if opciones_menu_empleados == 1:
+        pass
+    elif opciones_menu_empleados == 2:
+        pass
+    elif opciones_menu_empleados == 3:
+        pass
+    elif opciones_menu_empleados == 0:
+        menu_administrar_empleados = False
+    elif opciones_menu_empleados >= 4:
+        menu_administrar_empleados = False
