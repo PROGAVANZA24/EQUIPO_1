@@ -1,6 +1,3 @@
-from clase_empleado import empleado
-
-
 class curso:
     def __init__(self, id_curso = 0, descripcion = "DEFAULT", id_empleado = 0):
         self.id_curso = id_curso
