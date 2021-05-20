@@ -23,7 +23,7 @@ while menuprincipal != 0:
             elif opciones_menu_empleados == 2:
                 print("Empleados:")
                 empleado1 = empleado()
-                empleado1.consultar_todo
+                empleado1.consultar_todo()
             elif opciones_menu_empleados == 3:
                 id_emple = input("ingrese el id de empleado:\n")
                 empleado1 = empleado()
@@ -46,7 +46,7 @@ while menuprincipal != 0:
             elif opciones_menu_cursos == 2:
                 print("Cursos: ")
                 curso1 = curso()
-                curso1.consultar_todo
+                curso1.consultar_todo()
             elif opciones_menu_cursos == 3:
                 id_cur = input("Ingrese id del curso que busca: ")
                 curso1 = curso()
@@ -56,7 +56,27 @@ while menuprincipal != 0:
             elif opciones_menu_cursos >= 4:
                 menu_administrar_cursos = False
     elif menuprincipal == 3:
-        pass
+        menu_administrar_tema = True
+        while menu_administrar_tema == True:
+            opciones_menu_tema = int(input("Menu de administracion de temas: \n 1-Crear nuevo tema \n 2- Consultar todos los temas \n 3- Consultar a detalle \n"))
+            if opciones_menu_tema == 1:
+                tid = int(input("Ingrese un id para el tema: "))
+                tnom = input("Ingrese un nombre al tema")
+                tema1 = tema(tid, tnom)
+                tema1.guardar()
+                print("Se guardo el tema")
+            elif opciones_menu_tema == 2:
+                print("Temas: ")
+                tema1 = tema()
+                tema1.consultar_todo()
+            elif opciones_menu_tema == 3:
+                id_tem = input("Ingrese el id de tema a buscar: ")
+                tema1 = tema()
+                tema1.consultar_por_id(id_tem)
+            elif opciones_menu_tema == 0:
+                menu_administrar_tema = False
+            elif opciones_menu_tema >= 4:
+                menu_administrar_tema = False
     elif menuprincipal == 4:
         pass
     elif menuprincipal == 5:
